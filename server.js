@@ -26,7 +26,7 @@ app.get('/new/*', (req, res) => {
   if (isUrlValid(url)) {
     var code = generateShortUrl(url);
     translation.original_url = url;
-    if (port != 3000) {
+    if (port === 3000) {
       translation.short_url = 'http://' + req.hostname + ':' + port + '/' + code;
     } else {
       translation.short_url = 'http://' + req.hostname + '/' + code;
